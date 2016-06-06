@@ -1,0 +1,50 @@
+/*body{
+  background-image: url(./assets/blue2.jpeg);
+  background-size: cover;
+}*/
+.social>a{
+  padding: 8px;
+}
+h1{
+  font-family: "Courier New",sans-serif,monospace;
+  margin-bottom: 5px;
+}
+.dataInput{
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+.dataInput>input{
+  border-radius: 20px;
+  height: 40px;
+  width: 350px;
+  margin-right: 25px;
+  border: 1px solid green;
+}
+.dataInput>button{
+  border-radius: 20px;
+  height: 40px;
+  width: 60px;
+  border: 1px solid green;
+  background-color: white;
+}
+
+.displayTask{
+  display: flex;
+  justify-content: center;
+  /*color: coral;
+  font-size: 1.25em;*/
+}
+.displayTask>p>button{
+  margin-left: 25px;
+  border-radius: 20px;
+  color: red;
+  border: 1px solid red;
+  background-color: white;
+}
+.displayTask>p>input{
+border-radius: 20px;
+border: 1px solid green;
+  margin-right: 25px;
+
+}
