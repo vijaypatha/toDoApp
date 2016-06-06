@@ -11,7 +11,7 @@ angular.module("toDo").service("dataService", function() {
             taskArray.unshift(addingTask);
 
         } else {
-          alert("Please enter a task");
+          alert("Please enter a task!");
         }
     };
 
