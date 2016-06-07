@@ -1,7 +1,18 @@
-body {
-    /*background-image: url(./assets/ballon.jpg);
-    background-size: cover;*/
+html, body { height: 100%; padding: 0px 10px 10px 10px; margin: 0; }
+
+
+input:focus{
+  outline: none;
 }
+button:focus{
+  outline:none;
+}
+select:focus{
+  outline: none;
+}
+
+
+/*Custom*/
 .social>a {
     padding: 8px;
     color: black;
@@ -17,10 +28,12 @@ h1 {
     /*color: white;*/
     color:black;
 }
+/*DIVISION 1*/
 .dataInput {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
+
 }
 .dataInput>input {
     border-radius: 20px;
@@ -31,20 +44,16 @@ h1 {
     font-size: 20px;
     text-align: center;
     font-family: "Courier New", sans-serif, monospace;
+}
 
-}
-input:focus{
-  outline: none;
-}
-button:focus{
-  outline:none;
-}
 .dataInput>button {
     border-radius: 20px;
     height: 40px;
     width: 60px;
     border: 1px solid green;
     background-color: white;
+    font-family: "Courier New", sans-serif, monospace;
+
 }
 .displayTask {
     display: flex;
@@ -68,3 +77,80 @@ button:focus{
     border: 1px solid green;
     margin-right: 25px;
 }
+.dropdown{
+  display: flex;
+  justify-content: center;
+  margin-left: -15vh;
+  padding-bottom: 20px;
+
+}
+.dropdown>select{
+  border-radius: 20px;
+  border: 1px solid green;
+  margin-left: 30px;
+  font-family: "Courier New", sans-serif, monospace;
+  text-align: center;
+
+}
+
+#div1 {
+  background: rgba(232, 123, 9, 0.76);
+  width: 49%;
+  height: 48%;
+  float: left;
+  border-radius: 20px;
+  border: 1px solid green;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", sans-serif, monospace;
+
+ }
+#div1>h2{
+  letter-spacing:6px;
+}
+
+#div2 {
+  background:rgba(25, 162, 181, 0.81);
+  width: 49%;
+  height: 48%;
+  float: right;
+  border-radius: 20px;
+  border: 1px solid green;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", sans-serif, monospace;
+
+}
+#div2>h2{
+  letter-spacing:6px;
+}
+#div3 {
+  background: rgb(48, 209, 127);
+  width: 49%;
+  height: 48%;
+  float: left;
+  border-radius: 20px;
+  border: 1px solid green;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", sans-serif, monospace;
+
+}
+#div3>h2{
+  letter-spacing:6px;
+}
+#div4 {
+  background: rgba(110, 71, 204, 0.84);
+  width: 49%;
+  height: 48%;
+  float: right;
+  border-radius: 20px;
+  border: 1px solid green;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Courier New", sans-serif, monospace;
+
+ }
+ #div4>h2{
+   letter-spacing:6px;
+ }

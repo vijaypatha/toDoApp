@@ -17,7 +17,7 @@ this.removeTask = function(deleteTask){
 // ***********CONDITIONAL PUSH TO ORIGNAL ARRAY ******************
 
 this.newTask = function(addingTask,dropDown1, dropDown2) {
-    if (dropDown1=== "Important" && dropDown2 === "Urgent") {
+    if (dropDown1=== "Important" && dropDown2 === "Not Urgent") {
         taskArray.unshift(addingTask);
 
     } else {
@@ -29,30 +29,5 @@ this.newTask = function(addingTask,dropDown1, dropDown2) {
 
 //Orignal Array. (empty)
 var taskArray = [];
-
-
-
-
-//Save DATA to loacl storage **********************************
-// this.saveToDos = function(){
-//   var str = JSON.stringify(taskArray);
-//   localStorage.setItem("todos",str);
-// };
-//
-// //Get data from local storage
-//
-// this.getTodos = function(){
-//   var str = localStorage.getItem("todos");
-//   todos = JSON.parse(str)
-//   if(!todos){
-//     todos = [];
-//   }
-// };
-
-//****************************************************************
-
-
-
-
 
 }); //main

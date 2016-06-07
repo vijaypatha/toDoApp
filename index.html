@@ -1,48 +1,105 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="toDo">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>ToDoApp</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>ToDoApp</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://use.fontawesome.com/0198d2d98c.js"></script>
+    </head>
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://use.fontawesome.com/0198d2d98c.js"></script>
-</head>
+    <body ng-controller="mainController">
+        <!-- HEADER -->
+        <header>
+            <h1>snapTask</h1>
+            <div class="social">
+                <p>VijayPatha&copy|2016</p>
+                <a href="#">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
 
-<body ng-controller="mainController">
+        <!-- INPUT Section -->
 
-    <header>
-      <h1>snapTask</h1>
-        <div class="social">
-        <p>VijayPatha&copy|2016</p>
-            <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <div class="dataInput">
+            <input type="text" name="name" value="" placeholder="Add a task..." ng-model="addTask">
+            <button type="button" name="button" ng-click="submitButton()">Submit</button>
+        </div>
+        <br>
 
-                  </div>
-    </header>
+        <!-- DROPDOWNS -->
+        <div class="dropdown">
+            <select class="ImpDropdown" ng-model="selectedImportance" ng-options="x for x in importanceList"></select>
+            <select class="urgDropdown" ng-model="selectedUrgency" ng-options="x for x in urgencyList"></select>
+        </div>
 
-    <div class="dataInput">
-        <input type="text" name="name" value="" placeholder="Add a task..." ng-model="addTask">
-        <button type="button" name="button" ng-click="submitButton()">Submit</button>
-    </div>
+        <!-- Quadrant -->
 
-    <br>
-    <br>
+        <div id="div1">
+            <h2>MANAGE</h2>
+            <p>
+                Crisis and Pressing Problems
+            </p>
+            <div class="displayTask" ng-repeat="task in myTaskArray">
+                <p>
+                    <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask">
+                    {{task}}
+                    <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
+                </p>
+            </div>
+        </div>
 
-    <div class="displayTask" ng-repeat="task in myTaskArray">
-        <p>
-          <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask">
-          {{task}}
-            <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
-        </p>
-    </div>
+        <div id="div2" ng-controller="mainController2">
+            <h2>FOCUS</h2>
+            <p>
+                On Stratergies and Values
+            </p>
+            <div class="displayTask" ng-repeat="task in myTaskArray">
+                <p>
+                    <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask2">
+                    {{task}}
+                    <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
+                </p>
+            </div>
+        </div>
+        <div id="div3">
+            <h2>Aviod</h2>
+            <p>
+                Interruptions and Busy Work
+            </p>
+        </div>
+        <div id="div4">
+            <h2>LIMIT</h2>
+            <p>
+                Trivial and Wastefull
+            </p>
+        </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-    <script src="./scripts/app.js" charset="utf-8"></script>
-    <script src="./scripts/mainController.js" charset="utf-8"></script>
-    <script src="./scripts/dataService.js" charset="utf-8"></script>
-</body>
+        <!-- DISPLAY SECTION -->
+
+        <!-- <div class="displayTask" ng-repeat="task in myTaskArray">
+            <p>
+                <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask">
+                {{task}}
+                <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
+            </p>
+        </div> -->
+
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="./scripts/app.js" charset="utf-8"></script>
+        <script src="./scripts/mainController.js" charset="utf-8"></script>
+        <script src="./scripts/dataService.js" charset="utf-8"></script>
+        <!-- <script src="./scripts/mainController2.js" charset="utf-8"></script>
+        <script src="./scripts/dataService2.js" charset="utf-8"></script> -->
+    </body>
 
 </html>
