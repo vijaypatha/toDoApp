@@ -1,8 +1,9 @@
 angular.module("toDo").service("dataService", function() {
 
     //Get data from task Array
-    this.getTasks = function() {
-        return taskArray;
+    this.getTasks = function(dropDown1, dropDown2) {
+
+      return taskArray;
     }
 
 //Delete tasks from "taskArray"
@@ -17,18 +18,25 @@ this.removeTask = function(deleteTask){
 // ***********CONDITIONAL PUSH TO ORIGNAL ARRAY ******************
 
 this.newTask = function(addingTask,dropDown1, dropDown2) {
-    if (dropDown1=== "Important" && dropDown2 === "Urgent") {
-        taskArray.unshift(addingTask);
+    // if (dropDown1=== "Important" && dropDown2 === "Urgent") {
+    //     taskArray.unshift(addingTask);
+    //
+    // } else {
+    //   alert("Please enter a task!");
+    // }
+    var zone = dropDown1 + dropDown2;
 
-    } else {
-      alert("Please enter a task!");
+    if(taskArray[zone]){
+      taskArray[zone].push(addingTask);
+    }else{
+      taskArray[zone]=[addingTask];
     }
 };
 
 // ***********CONDITIONAL PUSH TO ORIGNAL ARRAY ******************
 
 //Orignal Array. (empty)
-var taskArray = [];
+var taskArray = {};
 
 
 

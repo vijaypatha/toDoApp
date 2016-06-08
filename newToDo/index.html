@@ -9,7 +9,7 @@
         <script src="https://use.fontawesome.com/0198d2d98c.js"></script>
     </head>
 
-    <body ng-controller="mainController">
+    <body>
         <!-- HEADER -->
         <header>
             <h1>snapTask</h1>
@@ -29,26 +29,28 @@
 
         <!-- INPUT Section -->
 
-        <div class="dataInput">
+        <div class="dataInput" ng-controller="mainCtrl">
             <input type="text" name="name" value="" placeholder="Add a task..." ng-model="addTask">
             <button type="button" name="button" ng-click="submitButton()">Submit</button>
         </div>
         <br>
 
         <!-- DROPDOWNS -->
-        <div class="dropdown">
+        <div class="dropdown" ng-controller="mainCtrl">
             <select class="ImpDropdown" ng-model="selectedImportance" ng-options="x for x in importanceList"></select>
             <select class="urgDropdown" ng-model="selectedUrgency" ng-options="x for x in urgencyList"></select>
+
+{{test}}
         </div>
 
         <!-- Quadrant -->
-      
-        <div id="div1">
+
+        <div id="div1" ng-controller="quadrant1Ctrl">
             <h2>MANAGE</h2>
             <p>
                 Crisis and Pressing Problems
             </p>
-            <div class="displayTask" ng-repeat="task in myTaskArray['ImportantUrgent']">
+            <div class="displayTask" ng-repeat="task in myTaskArray">
                 <p>
                     <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask">
                     {{task}}
@@ -57,12 +59,12 @@
             </div>
         </div>
 
-        <div id="div2">
+        <div id="div2" ng-controller="quadrant2Ctrl">
             <h2>FOCUS</h2>
             <p>
                 On Stratergies and Values
             </p>
-            <div class="displayTask" ng-repeat="task in myTaskArray['ImportantNot Urgent']">
+            <div class="displayTask" ng-repeat="task in myTaskArray">
                 <p>
                     <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask2">
                     {{task}}
@@ -70,31 +72,17 @@
                 </p>
             </div>
         </div>
-        <div id="div3">
+        <div id="div3" ng-controller="quadrant3Ctrl">
             <h2>Aviod</h2>
             <p>
                 Interruptions and Busy Work
             </p>
-            <div class="displayTask" ng-repeat="task in myTaskArray['Not ImportantUrgent']">
-                <p>
-                    <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask2">
-                    {{task}}
-                    <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
-                </p>
-            </div>
         </div>
-        <div id="div4">
+        <div id="div4" ng-controller="quadrant3Ctrl">
             <h2>LIMIT</h2>
             <p>
                 Trivial and Wastefull
             </p>
-            <div class="displayTask" ng-repeat="task in myTaskArray['Not ImportantNot Urgent']">
-                <p>
-                    <input type="checkbox" name="name" value="" placeholder="Add a task..." ng-model="addTask2">
-                    {{task}}
-                    <button type="button" name="button" ng-click="deleteButton(task)">Delete</button>
-                </p>
-            </div>
         </div>
 
         <!-- DISPLAY SECTION -->
@@ -110,10 +98,15 @@
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
         <script src="./scripts/app.js" charset="utf-8"></script>
-        <script src="./scripts/mainController.js" charset="utf-8"></script>
-        <script src="./scripts/dataService.js" charset="utf-8"></script>
-        <!-- <script src="./scripts/mainController2.js" charset="utf-8"></script>
-        <script src="./scripts/dataService2.js" charset="utf-8"></script> -->
+        <script src="./scripts/mainCtrl.js" charset="utf-8"></script>
+        <script src="./scripts/quadrant1Ctrl.js" charset="utf-8"></script>
+        <script src="./scripts/quadrant2Ctrl.js" charset="utf-8"></script>
+        <script src="./scripts/quadrant3Ctrl.js" charset="utf-8"></script>
+        <script src="./scripts/quadrant4Ctrl.js" charset="utf-8"></script>
+        <script src="./scripts/servicequadrant1.js" charset="utf-8"></script>
+        <script src="./scripts/servicequadrant2.js" charset="utf-8"></script>
+        <script src="./scripts/servicequadrant3.js" charset="utf-8"></script>
+        <script src="./scripts/servicequadrant4.js" charset="utf-8"></script>
     </body>
 
 </html>
